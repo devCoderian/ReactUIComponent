@@ -28,12 +28,12 @@ const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
 `
 
 /*
-  styled.div.attrs(() => ({ tabIndex: 0 }))`
+  styled.div.attrs(() => ({ tabIndex: 0 }))` //나랑 동일선에 있는 애들에게 스타일을 주고싶을 때 사용
 
 
   &:hover //자기자신
-  & ~ & 
-  & + & //바로 다음
+  & ~ & //같은 부모를 가진 모든 두번째 요소
+  & + & //같은 부모를 가진 두번째 요소
   &.something //나 자신 중 something을 가지고 있는 애
   .something-else & 
 */
