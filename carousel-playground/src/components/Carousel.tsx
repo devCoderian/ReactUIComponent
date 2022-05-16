@@ -11,7 +11,7 @@ position: relative;
 
 const ArrowButton = styled.button<{ pos: 'left' | 'right'}>`
   position: absolute;
-  top: 50%;
+  top: 45%;
   z-index: 1;
   padding: 8px 12px;
   font-size: 48px;
@@ -28,8 +28,12 @@ const ArrowButton = styled.button<{ pos: 'left' | 'right'}>`
           css`
             right: 0;
           `};
-`;
 
+    @media screen and (max-width: 200px) {
+        display: none;
+    }
+`;
+//200이하부터는 display:none 처리
 const CarouselList = styled.ul`
 list-style: none;
 margin: 0;
@@ -121,7 +125,7 @@ const Carousel:React.FC = () => {
                 {
                     banners.map((banner, idx) =>(
                         <CarouselListItem activeIndex = {activeIndex} key ={idx}>
-                            <div>{idx} {activeIndex}</div>
+                            {/* <div>{idx} {activeIndex}</div> */}
                             <img src = {banner} />
                         </CarouselListItem>
                     ))
