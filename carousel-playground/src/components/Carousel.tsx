@@ -2,7 +2,6 @@ import React, { useState, useEffect} from 'react'
 import styled from "@emotion/styled/macro";
 import { css } from '@emotion/react';
 import {RiArrowDropLeftLine, RiArrowDropRightLine } from 'react-icons/ri';
-
 const Base = styled.div``;
 
 const Container = styled.div`
