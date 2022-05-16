@@ -39,8 +39,8 @@ overflow: hidden;
 `;
 
 const CarouselListItem = styled.li<{ activeIndex: number}>`
-width: 50%;
-  flex: 0 0 50%;
+width: 100%;
+  flex: 0 0 100%;
   transform: translateX(-${({ activeIndex }) => activeIndex * 100}%);
   transition: 200ms ease;
   > img {
@@ -84,7 +84,9 @@ const Carousel:React.FC = () => {
         setActiveIndex(prev => (prev-1 + banners.length) % banners.length);
     }
 
+    //timeout
     const [activeIndex, setActiveIndex] = useState<number>(0);
+    //클릭 시 자동 캐러셀 방지를 위해
     const [isFocused, setIsFocused] = useState<boolean>(false);
      
     const goTo = (idx: number) => {
@@ -92,11 +94,9 @@ const Carousel:React.FC = () => {
     }
 
     const handleMouseEnter = () => {
-        console.log('true')
         setIsFocused(true)
     };
     const handleMouseOut = () => {
-        console.log(false)
         setIsFocused(false)
     };
 
